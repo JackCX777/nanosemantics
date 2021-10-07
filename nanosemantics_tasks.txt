@@ -1,0 +1,109 @@
+Какие результаты будут у этого кода?
+
+1.
+    def f(sum, l=[]):
+        l.append(sum)
+        print(l)
+
+    l = []
+    f(1) # [1]
+    f(1) # [1, 1]
+    f(1, l) # [1]
+    f(1) # [1]
+    print(l) # []
+
+2.
+    print({1: True, True: True, 1.0: True}) # {1: True} т.к. class bool потомок class int, True эквивалентно 1,
+                                            # результат вычисления hash будет одинаковый
+
+3.
+    import this
+    import this # Выведет в консоль PEP 20 Zen of Python, импорт выполняется только один раз
+
+---
+
+Написать решения:
+
+1.
+    Строка, заполненная русскими буквами, занимает 80% памяти. 
+    Нужно получить строку, отсортированную по алфавиту.
+
+
+# from random import randint
+#
+#
+# def sort(s, first_i, last_i):
+#     if first_i >= last_i:
+#         return
+#     else:
+#         pivot = s[randint(first_i, last_i)]
+#         i = first_i
+#         j = last_i
+#         while i <= j:
+#             while s[i] < pivot:
+#                 i += 1
+#             while s[j] > pivot:
+#                 j -= 1
+#             if i <= j:
+#                 s[i], s[j] = s[j], s[i]
+#                 i += 1
+#                 j -= 1
+#                 sort(s, first_i, j)
+#                 sort(s, i, last_i)
+#
+#
+# s = list(s)
+# sort(s, 0, len(s)-1)
+# s = ''.join(s)
+
+def fun():
+    yeild 1
+
+
+def fun2():
+    yeild 2
+
+
+def main():
+    fun()
+    fun2()
+
+2.
+    Написать цепочку из двух генераторов, которые читают строки из файла и переворачивают их.
+
+#
+# def read_line(file_path):
+#     with open(file_path, 'r') as file:
+#         for line in file.readlines():
+#             yield line.strip()
+#
+#
+# def reverse_str(inpt):
+#     yield (inpt[::-1])
+#
+#
+# def main(path_to_file):
+#     file_path = 'str.txt'
+#     for line in read_line(path_to_file):
+#         rev_str = reverse_str(line)
+#         for strng in rev_str:
+#             print(strng)
+#
+#
+# main(path)
+
+
+3.
+    Написать декоратор, который выводит в консоль аргументы и результат функции.
+
+# def decorator(func):
+#     def wrapper(*args, **kwargs):
+#         c = func(*args, **kwargs)
+#         print(f'Args: {args} and {kwargs}, result:{c}')
+#     return wrapper
+#
+# @decorator
+# def f(a, b):
+#     return a + b
+#
+# f(2, 2)

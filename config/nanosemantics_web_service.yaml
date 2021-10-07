@@ -1,0 +1,8 @@
+postgres:
+  database: nanosemantics_db
+  user: postgres
+  password: 12345678
+  host: postgres_container
+  port: 5432
+  minsize: 1
+  maxsize: 5
