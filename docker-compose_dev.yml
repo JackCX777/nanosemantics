@@ -56,6 +56,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    command: /bin/sh "./prestart.sh"
     depends_on:
       - postgres
     volumes:

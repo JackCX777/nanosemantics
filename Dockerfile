@@ -8,4 +8,5 @@ COPY ./requirements.txt .
 RUN pip3 install -r requirements.txt
 COPY ./nanosemantics_web_service ./nanosemantics_web_service
 COPY ./config ./config
-CMD ["python", "nanosemantics_web_service/main.py"]
+COPY ./prestart.sh .
+RUN chmod +x ./prestart.sh

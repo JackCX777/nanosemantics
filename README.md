@@ -16,4 +16,5 @@ The following technologies are used to implement the bot:
 
 - $ git clone https://github.com/JackCX777/nanosemantics
 - $ docker-compose -f docker-compose_dev.yml up --build -d
+- Please wait about two minutes
 - The api documentation is available at http://0.0.0.0:8080/api/doc#/Employees
